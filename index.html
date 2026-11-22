@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gas Dash — Arc Testnet Runner</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <header class="topbar">
+        <div class="brand">⛽ GAS DASH</div>
+        <div class="network-chip">Arc Testnet · Chain 5042002</div>
+      </header>
+
+      <main class="stage">
+        <canvas id="game" width="900" height="420"></canvas>
+
+        <div id="overlay" class="overlay">
+          <div class="overlay-card">
+            <h1>GAS DASH</h1>
+            <p class="tagline">Run the USDC coin across Arc. Grab transactions, dodge gas spikes.</p>
+            <div class="hint-row">
+              <span class="key">SPACE / ↑</span> jump
+              <span class="key">↓</span> duck
+            </div>
+            <button id="startBtn" class="start-btn">▶ START RUN</button>
+            <p class="best">Best score: <span id="bestScore">0</span></p>
+          </div>
+        </div>
+
+        <div id="gameOver" class="overlay hidden">
+          <div class="overlay-card">
+            <h1>OUT OF GAS</h1>
+            <p id="finalScore" class="tagline">Score: 0</p>
+            <button id="retryBtn" class="start-btn">↻ RUN AGAIN</button>
+          </div>
+        </div>
+      </main>
+
+      <div class="hud">
+        <div class="hud-item">SCORE <span id="scoreVal">0</span></div>
+        <div class="hud-item">TX COLLECTED <span id="txVal">0</span></div>
+        <div class="hud-item">SPEED <span id="speedVal">1.0x</span></div>
+      </div>
+
+      <footer class="footer">
+        Built on <a href="https://www.arc.network" target="_blank" rel="noreferrer">Arc</a> — the USDC-native-gas L1 by Circle.
+      </footer>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
